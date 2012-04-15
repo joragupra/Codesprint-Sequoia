@@ -62,8 +62,15 @@ public class Solution {
 //		}
 		else{
 			int aux2 = 0;
-			if((current%2==0 && sequence[start]>last) || (current%2==1 && sequence[start]<last)){
-				aux2 = subsequence(sequence, sequence[start], start+1, current+1, acc+1);
+			if(current%2==0){
+				if(sequence[start]>last && (start==sequenceLenght-1 || existsLess(sequence, start+1, sequence[start]))){
+					aux2 = subsequence(sequence, sequence[start], start+1, current+1, acc+1);
+				}
+			}
+			else{
+				if(sequence[start]<last && (start==sequenceLenght-1 || existsGreater(sequence, start+1, sequence[start]))){
+					aux2 = subsequence(sequence, sequence[start], start+1, current+1, acc+1);
+				}
 			}
 			int aux = 0;
 			if((sequenceLenght-(start+1))>aux2){
@@ -75,5 +82,25 @@ public class Solution {
 			}
 			return localMax;
 		}
+	}
+	
+	private static boolean existsGreater(long[] sequence, int start, long value){
+		boolean exists = false;
+		for(int i=start;i<sequenceLenght && !exists;i++){
+			if(sequence[i]>value){
+				exists = true;
+			}
+		}
+		return exists;
+	}
+	
+	private static boolean existsLess(long[] sequence, int start, long value){
+		boolean exists = false;
+		for(int i=start;i<sequenceLenght && !exists;i++){
+			if(sequence[i]<value){
+				exists = true;
+			}
+		}
+		return exists;
 	}
 }
