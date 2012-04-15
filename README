@@ -1,0 +1,233 @@
+HELP JONNY
+==========
+
+Jonny has just learned Sorting in his algorithm classes. He wants to show his mother how good he is with algorithms, but his mother is very clever. She wants to ensure Jonny has learned the key concepts and not just the methods. 
+
+She places N integers in order 1, 2, 3, ..., N. and asks Jonny to reverse this sequence, i.e convert this sequence to N, N-1, .... , 3, 2, 1. The only operation Jonny is allowed to do is to choose any 4 (not necessarily adjacent) integers and perform the following action: exchange the leftmost integer with the rightmost one and similarly swap the remaining two integers in the middle, both swaps must occur. He can perform this operation as many times he want.
+
+Jonny has a feeling that this may not always be possible for all sequences, so before starting he wants to know whether it is possible to do this task.
+
+Input Format
+
+First line of the input contains T, the number of testcases. Then follow T lines, each containing an integer N.
+
+Output Format
+
+For each of the given numbers print YES if the task is possible, otherwise NO.
+
+Sample Input
+
+2
+5
+6
+
+Sample Output
+
+YES
+NO
+
+Constrains
+
+1 <= T <= 10
+4 <= N <= 1,000,000
+
+
+PUNCH
+=====
+
+We have n punching bags in a row. Mr Lee is going to practice with them for the upcoming Boxing tournament.
+
+Each bag has a resistance level. Mr Lee can punch a bag if its resistance is greater than 0. He is an extremely hard puncher: when Mr Lee punches a bag, not only is its resistance set to 0 (ie: the bag is destroyed), but also the resistances of its immediately adjacent neighbors( one on left and other on right ) are decreased by one. If at any point of time the resistance of a bag drops to zero or less it is considered as destroyed. A punch on a bag with resistance greater than 0 has no impact on an immediate neighbour which is already destroyed. 
+
+Mr Lee wants to maximize his (very expensive) workout sessions, and would like to punch on these bags as much as possible. For any set of punching bags, what is the maximum number of punches that he can perform?
+
+Input Format
+
+On the only line of input there are n characters describing the resistances of the bags from 1 to n.
+
+Ouput Format 
+
+On the only line of the output print an integer describing the maximum number of punches Mr Lee can punch for that set of bags.
+
+Sample Input
+
+11
+
+Sample Ouput
+
+1
+
+Sample Input
+
+021
+
+Sample Output
+
+2
+
+Explanation
+
+In the first example there are two bags, and we can punch only one of them before destroying both. In the second example we can punch on the third bag and then on the second bag to obtain two punches.
+
+Constraints
+
+Each bag has a resistance level between 0 and 3 ( inclusive ) and the number of bags is not more than 100.
+
+ALTERNATING SEQUENCES
+=====================
+
+Given a sequence of integers a[1],a[2],...,a[n], we call a sequence b[1], ..., b[m] an alternating sequence if:
+
+for every odd 1 < i <= m, we have b[i] < b[i-1],
+for every even 1 < i <= m, we have b[i] > b[i-1].
+Given a sequence of integers a[1], ..., a[n], your program must find the length of the longest alternating subsequence. (we define a[i1], ..., a[im] to be a subsequence if 1<=i1< i2<...<im<=n.)
+
+Input
+
+First line of input contains the length of sequence n (1<=n<=200,000). The second line contains n space seperated integers a[1], ..., a[n] (1 <= a[i] <= 10^9).
+
+Output
+
+Output is just a single integer number which denotes the length of longest alternating subsequence.
+
+Sample Input
+
+10
+
+1 2 3 4 5 6 5 4 3 2
+
+Sample Output
+
+3
+
+Explanation: On many alternating subsequences of length three, some are 1 6 2, 3 5 3, 4 6 2 etc. There is no alternating subsequence of length greater than three.
+
+Note : A sequence with just two elements, such that the second element is greater than first is a valid alternating sequence. Moreover a sequence with only one element is also considered an alternating sequence.
+
+FIRST K EDGES
+=============
+
+In the country of XIONS there are N cities and M roads. A road directly connects one city to another. The road network was built slowly over time, one road per year. Now, the roads are getting older and have started to break, in the order that they were built.
+ 
+You need to find the number of neighborhoods that remain after the first k roads have broken. A neighborhood is defined as a group of cities such that, a person can go from any city in the group to any other city in the group by using non-broken roads.
+ 
+In concrete terms, for a undirected graph with N nodes and M edges, we want to know how many connected blocks of the Graph remain after deleting the first K edges in the input.
+ 
+Input Format:
+First line of the input contains two integers N and M.
+Then following M lines each containing 2 space-seperated integers u and v, which denotes an road. These roads were built in this order one after another.
+ 
+Output Format:
+Output M lines, the ith line is the number of neighborhoods that remain after first i roads have been broken..
+ 
+Constraints:
+0 < N <= 10000
+0 < M <= 100000
+0 <= u, v < N
+No road directly connects a city to itself.
+For any pair of cities, there is at most one road which directly connects them.
+ 
+Sample Input:
+5 10
+0 1
+1 2
+1 3
+1 4
+0 2
+2 3
+0 4
+0 3
+3 4
+2 4
+ 
+Sample Output:
+1
+1
+1
+2
+2
+2
+2
+3
+4
+5
+ 
+Explanation:
+ 
+Let us model the network of cities and roads as a graph with cities as nodes and roads as edges in the graph.
+ 
+The network given in the sample input is a complete graph (in this specific case), as each pair of vertices has an edge connecting them, so there's only 1 neighborhood at first. The first 3 lines of output are ones because after deleting the first 3 edges of the graph, all vertices are still connected. But after deleting the first 4 edges of the graph, vertex 1 will be disconnected with other vertices, and it became an independent neighborhood. As you continue deleting edges, the number of disconnected blocks increases, and finally each city will be its own neighborhood: the last output should always be N.
+
+OUTRIGHT DATA CLEANING
+======================
+
+Outright helps small businesses prosper, and one way of doing this is to organize financial information for our customers. Financial transaction data can be messy however, and one challenge is organizing data from their credit card transactions.
+ 
+Your Task
+ 
+Your task is to write code that cleans up and organizes credit card transactions by Payee Name, Tags, and Classification. The data file contains a list of transaction data, with each line containing exactly one transaction.
+ 
+Payee Name: Processing payee names take transactions like these:
+ 
+ CLICK-TO-PAY PAYMENT, THANK YOU
+ APL*APPLE ONLINE STORE 800-676-2775 CA
+ AGILE WEB SOLUTIONS ST THOMAS CA
+ FOREIGN TRANSACTION FEE*INTEREST CHARGE
+ LATE FEE - AUG PAYMENT PAST DUE
+ WOOT.COM SERVICE@WOOT.TX
+ 2NDSITE FRESHBOOKS 416-481-6946 CA
+ PAYPAL *STEVENSACKS 402-935-1234 CA
+ MI RANCHITO UNIVERSITY CYMO
+ O'REILLY MEDIA SEBASTOPOL CA
+ 
+The transactions might be cleaned up as follows:
+ 
+Click-to-pay
+Apple Online Store
+agilebits.com
+Credit Card Foreign Transaction Fee
+Late Fee
+Woot.com
+Freshbooks
+Steven Sacks
+Mi Ranchito
+O'Reilly Media
+ 
+The sample output document provides a larger set of examples that illustrate what your code might produce. Note that this sample output is hand-curated and we do not expect that your code would reproduce this output exactly or completely. In addition, the sample cleaned-up payees are not to be taken as the only correct way of handling these examples. They are meant to illustrate one possible way of handling the data.
+ 
+Tags: Tags are helpful for searching, grouping, and analyzing financial transactions. Although in practice, tags are virtually limitless, for the purposes of this problem, we have included the majority of the tags in the grading set in the sample data. (The small minority of tags not in the sample data is left to the ambitious)
+ 
+Classification: Outright helps small businesses with classifying financial transactions for bookkeeping and tax time. The following list provides a set of standard expense classifications to use:
+ 
+1. Advertising
+2. Car and truck
+3. Contractors and freelancers
+4. Cost of Goods Sold
+5. Credit Card Payment
+6. Duplicate or Wrong Expenses
+7. Estimated and Income Tax Payments
+8. Meals & entertainment
+9. Mileage
+10.Office Supplies
+11.Other expenses
+12.Owner's Pay/Draw
+13.Personal Expense
+14.Sales Tax Submitted
+15.Supplies
+16.Transfer Out
+17.Travel
+18.Uncategorized
+19.Utilities
+ 
+Input Format:
+ 
+First line of the input contains N, the number of payee names to process.
+Then follow N lines, each line contains exactly one payee.
+ 
+Output Format:
+ 
+Print to standard output total of 3*N lines. First N lines, the ith line contains the cleaned payee name corresponding to ith payee name in input. Next N lines, the ith line contains a list of tags (  comma separated but not necessarily in sorted order, the code-checker takes care of that ) associated with the ith payee name in input. The last N lines, the ith line contains the category associated with the ith payee name in the input.
+ 
+See the sample downloadable input/output files for more clarification.
+
+Scoring: Your output is approximately matched with a hand-curated data set. Cleaned names, tags and classifications are scored separately, with payee names weighted double that of tags and classification (A 50% 25% 25% breakdown). The final score is normalized to 100.
