@@ -12,6 +12,9 @@ public class Solution {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
+//		int[] aux = {1, 2, 1};
+//		MrLee mrx = new MrLee(aux);
+//		System.out.println(">>> " + (mrx.valorate(0) + mrx.valorate(2)));
 		String s = scanner.next();
 		int[] bags = scanBags(s);
 		int count = 0;
@@ -38,9 +41,7 @@ public class Solution {
 			for (int i = 0; i < this.bags.length; i++) {
 				if (this.bags[i] > 0) {
 					int valoration = valorate(i - 1) + valorate(i + 1);
-					if (valoration == 8) {
-						return i;
-					} else if (bestCandidate == -1) {
+					if (bestCandidate == -1) {
 						bestCandidate = i;
 						bestCandidateValoration = valoration;
 					} else {
